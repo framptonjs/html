@@ -40,6 +40,6 @@
     "webpack": "^2.4.1"
   },
   "peerDependencies": {
-    "@frampton/core": "~0.0.9"
+    "@frampton/core": "~0.0.10"
   }
 }

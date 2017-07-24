@@ -1,5 +1,5 @@
 import { curry, Curried2Result } from '@frampton/core';
-import contains from './html/contains';
+import contains from './contains';
 
 
 /**
@@ -19,7 +19,7 @@ export default curry((selector: string, element: HTMLElement): boolean => {
 
   var i: number = 0;
 
-  while (elementList[i] && !contains(elementList[i], element)) {
+  while (elementList[i] && !contains(<HTMLElement>elementList[i], element)) {
     i++;
   }
 

@@ -1,8 +1,8 @@
-import { default as contains } from '../src/element-contains-selector';
+import { default as containsSelector } from '../src/contains-selector';
 import { assert } from 'chai';
 
 
-describe('elementContainsSelector', function() {
+describe('contains', function() {
   var div1: HTMLElement = null;
   var div2: HTMLElement = null;
   var container: HTMLElement = null;
@@ -24,7 +24,7 @@ describe('elementContainsSelector', function() {
 
   it('should return true if element contains element with selector', function() {
     div1.classList.add('blue');
-    const actual = contains('.blue', div1);
+    const actual = containsSelector('.blue', div1);
     const expected: boolean = true;
 
     assert.equal(actual, expected);
@@ -32,7 +32,7 @@ describe('elementContainsSelector', function() {
 
   it('should return null if no match', function() {
     div1.classList.add('blue');
-    const actual = contains('#blue', div1);
+    const actual = containsSelector('#blue', div1);
     const expected: boolean = false;
 
     assert.equal(actual, expected);

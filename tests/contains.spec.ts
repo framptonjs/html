@@ -3,36 +3,39 @@ import { assert } from 'chai';
 
 
 describe('contains', function() {
-  var div1: HTMLElement = null;
-  var div2: HTMLElement = null;
+  var parent: HTMLElement = null;
+  var child: HTMLElement = null;
+  var orphan: HTMLElement = null;
   var container: HTMLElement = null;
 
   beforeEach(function() {
-    div1 = document.createElement('div');
-    div2 = document.createElement('div');
+    parent = document.createElement('div');
+    child = document.createElement('div');
+    orphan = document.createElement('div');
     container = document.body;
-    container.appendChild(div1);
-    div1.appendChild(div2);
+    container.appendChild(parent);
+    container.appendChild(orphan);
+    parent.appendChild(child);
   });
 
   afterEach(function() {
-    container.removeChild(div1);
-    div1 = null;
-    div2 = null;
+    container.removeChild(parent);
+    container.removeChild(orphan);
+    parent = null;
+    child = null;
+    orphan = null;
     container = null;
   });
 
   it('should return true if element contains element with selector', function() {
-    div1.classList.add('blue');
-    const actual = contains('.blue', div1);
+    const actual = contains(parent, child);
     const expected: boolean = true;
 
     assert.equal(actual, expected);
   });
 
   it('should return null if no match', function() {
-    div1.classList.add('blue');
-    const actual = contains('#blue', div1);
+    const actual = contains(parent, orphan);
     const expected: boolean = false;
 
     assert.equal(actual, expected);

@@ -77,6 +77,17 @@ const doesContain: boolean =
   contains(document.getElementById('parent'), document.getElementById('child'));
 ```
 
+### containsSelector
+
+Returns a boolean indicating if the given element, or one of its children, matches the given selector.
+
+```
+import { containsSelector } from '@frampton/html';
+
+const doesContain: boolean =
+  containsSelector('.my-class', element);
+```
+
 ### currentValue
 
 Returns the current value of the given CSS property on given element. Uses getComputedStyle under the hood.
@@ -86,17 +97,6 @@ import { currentValue } from '@frampton/html';
 
 const currentHeight: string =
   currentValue('height', element);
-```
-
-### elementContainsSelector
-
-Returns a boolean indicating if the given element, or one of its children, matches the given selector.
-
-```
-import { elementContainsSelector } from '@frampton/html';
-
-const doesContain: boolean =
-  elementContainsSelector('.my-class', element);
 ```
 
 ### elementValue
