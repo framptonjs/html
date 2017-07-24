@@ -1,0 +1,11 @@
+import './add-class.spec';
+import './apply-styles.spec';
+import './closest.spec';
+import './contains.spec';
+import './current-value.spec';
+import './element-contains-selector.spec';
+import './element-value.spec';
+import './has-class.spec';
+import './matches.spec';
+import './selector-contains.spec';
+import './supported-by-element.spec';
